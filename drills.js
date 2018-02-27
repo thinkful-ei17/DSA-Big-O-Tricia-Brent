@@ -467,7 +467,7 @@ function generateFib(num) {
             traverseB(node[key], indent + 4);
         }
     }
-    // best case O(1) where we have an object with no keys.
+    // best case O(n) where we have an object with no keys.
     // worst/avg O(n) where we recursively call the function for every key in the function.
 
 
