@@ -83,11 +83,10 @@ function generateFib(num) {
     else {
       result.push(result[i - 2] + result[i - 3]);
     }
-  }
-  // once the for loop finishes
-  // we return `result`.
-  return result;
-} 
+    // once the for loop finishes
+    // we return `result`.
+    return result;
+}
 //best case is O(1) where the number = 0 we we simply return the empty array.
 //O(n) or linear
 //The algorithm, specifically, the looping is based on the value of num.  Therefore, the time is porportional to the num
@@ -147,3 +146,48 @@ function isPrime(n) {
 // its O(n) or linear time.
 // it will always have to loop though at n times.
 // worst/avg is linear because it depends solely on the number.
+_____________________________________________________________________________
+//COUNTING SHEEP
+function countSheep(num) {
+    //stopping condition of base case
+    if (num === 0) {
+        console.log(`All sheep jumped over the fence`);
+    }
+    //this is the recursive case
+    //this will be executed until it reaches base case
+    else {
+        console.log(`${num}: Another sheep jump over the fence`);
+        countSheep(num - 1);
+    }
+}
+//Best case = O(1), worst case = O(n)
+//If the number is 0, the operations will occur only once, else, the operations will occur n times and
+//is based on n input
+
+
+________________________________________________________________________________
+//ARRAY DOUBLE
+function double_all(arr) {
+    if (!arr.length) {
+        return [];
+    }
+    return [arr[0] * 2, ...double_all(arr.slice(1))];
+}
+
+//Best case = O(1), worst case = O(n)
+//If the array is empty, the "if" operation will occur only once, else the operation will occur n times and
+//is based on the size of the array
+
+
+________________________________________________________________________________ /
+    //REVERSE STRING
+    function reverseString(str) {
+        if (str.length < 2) {
+            return str;
+        }
+        return reverseString(str.slice(1)) + str[0];
+    }
+
+//Best case = O(1), worst case = O(n)
+//If the str is less than 2 in length then we only execute the if statement, else the algorithm will exeucte
+//n times based on the length of the string.
