@@ -8,7 +8,7 @@ function isEven(value) {
 // O(1) or constant time.
 // because its only ever looking at 1 value so no matter what, the run time is the same.
 // best/worst/average all the same.
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+________________________________________________________
 // ARE YOU HERE DRILL
 function areYouHere(arr1, arr2) {
     for (let i = 0; i < arr1.length; i++) {
@@ -20,9 +20,10 @@ function areYouHere(arr1, arr2) {
     }
     return false;
 }
+// best case 1st item matches 2nd O(1) its constant.
 // O(n^2) or polynomial time.
-// best/worst/average is all quadratic because no matter what we have to run each loop at least 1 time.
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+// worst/average is all quadratic because no matter what we have to run each loop at least 1 time.
+_________________________________________________________
 //DOUBLER DRILL
 function doubleArrayValues(array) {
     for (let i = 0; i < array.length; i++) {
@@ -30,11 +31,12 @@ function doubleArrayValues(array) {
     }
     return array;
 }
+// best is O(1) if 1 item in array.
 // O(n) or linear time.
-// it always runs through the entire loop so it will increase linearly with the size of the data.
-// best/worst/average all the same because were looping through entire array.
+// it always runs through the entire array so it will increase linearly with the size of the data.
+// worst/average all the same because were looping through entire array.
 
-_____________________________________________________
+____________________________________________________________
 //NAIVE SEARCH DRILL
 function naiveSearch(array, item) {
     for (let i = 0; i < array.length; i++) {
@@ -43,10 +45,11 @@ function naiveSearch(array, item) {
         }
     }
 }
+//best case element at 0index matches item O(1) or constant.
 //O(n) or linear time.
 //it will always need to run through the array to find the matching element.  Time increases as input increases
 //best, worst, average are all the same, because the algorithm will always need to execute the for loop
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+_______________________________________________________________
 //CREATING PAIRS DRILL
 function createPairs(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -57,7 +60,8 @@ function createPairs(arr) {
 }
 //O(n^2) or quadratic
 //The algorithm has two nested for loops, which will always be executed.
-//best,worst, average are all the same.
+//best O(n) if 1 or 2
+//worst, average are all the same.
 ________________________________________________________________
 //GENERATE FIBONACCI DRILL
 function generateFib(num) {
@@ -84,9 +88,11 @@ function generateFib(num) {
     // once the for loop finishes
     // we return `result`.
     return result;
-} //O(n) or linear
+} 
+//best case is O(1) where the number = 0 we we simply return the empty array.
+//O(n) or linear
 //The algorithm, specifically, the looping is based on the value of num.  Therefore, the time is porportional to the num
-//best, worst, average are all the same.
+//worst, average are all the same.
 __________________________________________________________________
 //EFFICIENCY SEARCH
 function efficientSearch(array, item) {
@@ -109,6 +115,36 @@ function efficientSearch(array, item) {
     }
     return -1;
 }
+//best case is find item in middle first try O(1)
 //O(log(n)) or logarithmic
 //The algorithm cuts the input in half and determines < or >, then continues with this algorithm
-//best,worst, average is the same
+//worst, average is the same
+
+___________________________________________________________________________
+// RANDOM ELEMENT DRILL
+function findRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+// its O(1) or constant time.
+// its only ever looking for one index in the array no matter the size of the data.
+// best/worst/avg same 
+
+____________________________________________________________________________
+// IS IT PRIME DRILL 
+function isPrime(n) {
+    // if n is less than 2 or a decimal, it's not prime
+    if (n < 2 || n % 1 != 0) {
+        return false;
+    }
+    // otherwise, check if `n` is divisible by any integer
+    // between 2 and n.
+    for (let i = 2; i < n; ++i) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+// best-case is O(1) or constant in the case of someone entering a 2 or a decimal.
+// its O(n) or linear time.
+// it will always have to loop though at n times.
+// worst/avg is linear because it depends solely on the number.
