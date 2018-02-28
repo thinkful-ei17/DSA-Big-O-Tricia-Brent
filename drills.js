@@ -364,6 +364,14 @@ function generateFib(num) {
     The sequence looks as follows: 1 1 2 3 5 8 13.
     Input: 7
     Output: 13
+    1 1 2 3 5
+    0+1
+    1+1
+    1+2
+    2+3
+    3+5
+
+    
     */
     function fibonacci(n) {
         // Base case
